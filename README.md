@@ -6,7 +6,11 @@ Installs MythTV in Debian/Ubuntu.
 Changes
 =======
 
-## v0.1.0:
+## v0.0.2:
+
+* Add link to GitHub repository.
+
+## v0.0.1:
 
 * Initial version.
 
