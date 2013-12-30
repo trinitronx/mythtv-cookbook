@@ -1,0 +1,1 @@
+default[:mythtv][:version] = nil
