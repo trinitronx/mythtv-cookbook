@@ -1,7 +1,7 @@
 case node[:platform_family]
-when "rhel"
+when 'rhel'
   return
-when "debian"
+when 'debian'
   include_recipe 'apt'
   
   if MythbuntuPPA.supports_version?(node[:lsb][:codename], node[:mythtv][:version])

@@ -17,6 +17,6 @@
 # limitations under the License.
 #
 
-include_recipe "mythtv::default"
+include_recipe 'mythtv::default'
 
-package "mythtv-frontend"
+package 'mythtv-frontend'
