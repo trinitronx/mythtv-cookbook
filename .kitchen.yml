@@ -6,10 +6,23 @@ provisioner:
   name: chef_solo
 
 platforms:
+  - name: ubuntu-10.04
   - name: ubuntu-12.04
+  - name: ubuntu-12.10
+  - name: ubuntu-13.04
+  - name: ubuntu-13.10
   - name: centos-6.4
 
 suites:
   - name: default
     run_list:
+     - recipe[mythtv::default]
+    attributes:
+  - name: backend
+    run_list:
+     - recipe[mythtv::backend]
+    attributes:
+  - name: frontend
+    run_list:
+     - recipe[mythtv::frontend]
     attributes:
