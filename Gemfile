@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 group :test do
-  gem 'berkshelf'
-  gem 'test-kitchen'
-  gem 'kitchen-vagrant'
+  gem 'cookbook-development', :git => 'https://github.com/RallySoftware-cookbooks/cookbook-development'
+  gem 'strainer', '>= 3.3.0'
 end
