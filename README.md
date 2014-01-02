@@ -6,6 +6,22 @@ Installs MythTV in Debian/Ubuntu.
 Changes
 =======
 
+## v0.0.3:
+
+* Expand supported versions of Ubuntu:
+  * Intelligently detect the latest version of MythbuntuPPA/mythtv to use based on LSB codename
+  * Added MythbuntuPPA library (+rspec tests) for mapping supported platform versions to PPA versions
+  * Use apt\_repository LWRP from apt cookbook to add the PPA
+* Added cookbook test framework
+  * Added chefspec, serverspec, test-kitchen tests (Run via: `rake` or `strainer test`)
+  * Use RallySoftware-cookbooks/cookbook-development cookbook test framework gem
+  * Added more supported versions of ubuntu to test-kitchen platforms
+  * Use [Travis CI](http://travis-ci.org) to automatically run tests for pull-requests & changes to this cookbook
+* Minor enhancements
+  * Fix metadata
+  * Fix Foodcritic warnings: FC007, FC019
+  * Cookbook version now specified in VERSION file
+
 ## v0.0.2:
 
 * Add link to GitHub repository.
