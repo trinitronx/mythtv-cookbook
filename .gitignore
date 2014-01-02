@@ -11,6 +11,7 @@ Berksfile.lock
 .*.sw[a-z]
 *.un~
 /cookbooks
+vendor
 
 # Bundler
 Gemfile.lock
