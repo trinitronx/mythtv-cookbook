@@ -14,3 +14,4 @@ supports 'ubuntu'
 
 depends 'mysql'
 depends 'apt'
+depends 'ubuntu'
