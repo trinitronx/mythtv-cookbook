@@ -17,8 +17,8 @@
 # limitations under the License.
 #
 
-include_recipe 'mysql::server'
 include_recipe 'mythtv::default'
+include_recipe 'mysql::server'
 
 package 'mythtv-backend'
 
