@@ -11,7 +11,6 @@ platforms:
   - name: ubuntu-12.10
   - name: ubuntu-13.04
   - name: ubuntu-13.10
-  - name: centos-6.4
 
 suites:
   - name: default
@@ -26,7 +25,6 @@ suites:
         server_root_password: rootpass
         server_debian_password: debpass
         server_repl_password: replpass
-
   - name: frontend
     run_list:
      - recipe[mythtv::frontend]
