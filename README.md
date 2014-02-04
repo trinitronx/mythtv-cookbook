@@ -6,6 +6,17 @@ Installs MythTV in Debian/Ubuntu.
 Changes
 =======
 
+## v0.0.4:
+
+* Fix problems found in integration test suites due to long-running `apt-get install`s
+  * Enable multiverse repo for dependencies
+  * Adding `retry_delay` and `retries` params to frontend & backend recipes
+  * Fix IOError (closed stream) & Mixlib::ShellOut::CommandTimeout due to long running apt-get commands
+  * Removed unsupported centos-64 from test-kitchen platforms
+  * Fix apt 404 errors by including mythtv::default & running apt-get update first
+* Added serverspec integration tests for mythtv::backend and mythtv::frontend
+  * Added default mysql passwd attributes for mythbackend test-kitchen suite
+
 ## v0.0.3:
 
 * Expand supported versions of Ubuntu:
