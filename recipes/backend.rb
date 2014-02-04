@@ -20,7 +20,10 @@
 include_recipe 'mythtv::default'
 include_recipe 'mysql::server'
 
-package 'mythtv-backend'
+package 'mythtv-backend' do
+  retry_delay 1
+  retries 2
+end
 
 service 'mythtv-backend' do
     if (platform?('ubuntu') && node[:platform_version].to_f >= 10.04)
