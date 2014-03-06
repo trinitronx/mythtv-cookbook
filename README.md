@@ -6,6 +6,33 @@ Installs MythTV in Debian/Ubuntu.
 Changes
 =======
 
+## v0.0.4:
+
+* Fix problems found in integration test suites due to long-running `apt-get install`s
+  * Enable multiverse repo for dependencies
+  * Adding `retry_delay` and `retries` params to frontend & backend recipes
+  * Fix IOError (closed stream) & Mixlib::ShellOut::CommandTimeout due to long running apt-get commands
+  * Removed unsupported centos-64 from test-kitchen platforms
+  * Fix apt 404 errors by including mythtv::default & running apt-get update first
+* Added serverspec integration tests for mythtv::backend and mythtv::frontend
+  * Added default mysql passwd attributes for mythbackend test-kitchen suite
+
+## v0.0.3:
+
+* Expand supported versions of Ubuntu:
+  * Intelligently detect the latest version of MythbuntuPPA/mythtv to use based on LSB codename
+  * Added MythbuntuPPA library (+rspec tests) for mapping supported platform versions to PPA versions
+  * Use apt\_repository LWRP from apt cookbook to add the PPA
+* Added cookbook test framework
+  * Added chefspec, serverspec, test-kitchen tests (Run via: `rake` or `strainer test`)
+  * Use RallySoftware-cookbooks/cookbook-development cookbook test framework gem
+  * Added more supported versions of ubuntu to test-kitchen platforms
+  * Use [Travis CI](http://travis-ci.org) to automatically run tests for pull-requests & changes to this cookbook
+* Minor enhancements
+  * Fix metadata
+  * Fix Foodcritic warnings: FC007, FC019
+  * Cookbook version now specified in VERSION file
+
 ## v0.0.2:
 
 * Add link to GitHub repository.

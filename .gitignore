@@ -1,2 +1,19 @@
 .rake_test_cache
 metadata.json
+.kitchen/
+.kitchen.local.yml
+.vagrant
+Berksfile.lock
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+/cookbooks
+vendor
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*

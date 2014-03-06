@@ -17,6 +17,9 @@
 # limitations under the License.
 #
 
-include_recipe "mythtv::default"
+include_recipe 'mythtv::default'
 
-package "mythtv-frontend"
+package 'mythtv-frontend' do
+  retry_delay 1
+  retries 2
+end

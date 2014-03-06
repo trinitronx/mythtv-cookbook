@@ -17,13 +17,16 @@
 # limitations under the License.
 #
 
-include_recipe "mysql::server"
-include_recipe "mythtv::default"
+include_recipe 'mythtv::default'
+include_recipe 'mysql::server'
 
-package "mythtv-backend"
+package 'mythtv-backend' do
+  retry_delay 1
+  retries 2
+end
 
-service "mythtv-backend" do
-    if (platform?("ubuntu") && node.platform_version.to_f >= 10.04)
+service 'mythtv-backend' do
+    if (platform?('ubuntu') && node[:platform_version].to_f >= 10.04)
       provider Chef::Provider::Service::Upstart
     end
     supports :status => true, :restart => true
@@ -36,9 +39,9 @@ end
   end
 end
 
-cron "optimize database" do
-  hour "0"
-  minute "6"
-  command "/usr/share/doc/mythtv-backend/contrib/maintenance/optimize_mythdb.pl"
-  user "mythtv"
+cron 'optimize database' do
+  hour '0'
+  minute '6'
+  command '/usr/share/doc/mythtv-backend/contrib/maintenance/optimize_mythdb.pl'
+  user 'mythtv'
 end
