@@ -1,3 +1,8 @@
+[![Build Status](http://img.shields.io/travis/trinitronx/mythtv-cookbook.svg)](https://travis-ci.org/trinitronx/mythtv-cookbook)
+[![Cookbook Version](http://img.shields.io/cookbook/v/mythtv.svg)](http://community.opscode.com/cookbooks/mythtv)
+[![Gittip](http://img.shields.io/gittip/trinitronx.svg)](https://www.gittip.com/trinitronx)
+
+
 Description
 ===========
 
