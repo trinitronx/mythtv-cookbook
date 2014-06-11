@@ -35,6 +35,13 @@ ensure
   raise 'A desktop user and home directory must exist to install the Airplay RAOPKey' if home.nil?
 end
 
+directory "#{home}/.mythtv" do
+  owner user
+  group user
+  mode 00755
+  action :create
+end
+
 remote_file "#{home}/.mythtv/RAOPKey.rsa" do
   owner     user
   source    node[:mythtv][:raop_key][:url]
@@ -50,7 +57,7 @@ file_contents += "export MYTHTV_AIRPLAY=1"
 file "/etc/profile.d/mythtv_airplay.sh" do
   owner "root"
   group "root"
-  mode 0755
+  mode 0644
   content file_contents
   action :create
 end
