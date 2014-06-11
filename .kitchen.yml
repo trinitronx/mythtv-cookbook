@@ -3,7 +3,7 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 platforms:
   - name: ubuntu-10.04
@@ -29,3 +29,10 @@ suites:
     run_list:
      - recipe[mythtv::frontend]
     attributes:
+  - name: airplay
+    run_list:
+     - recipe[mythtv::airplay]
+    attributes:
+      mythtv:
+        raop_key:
+          user: vagrant
