@@ -92,6 +92,15 @@ Strainerfile
 .vagrant
 Vagrantfile
 
+# Docker #
+##########
+Dockerfile
+
 # Travis #
 ##########
 .travis.yml
+
+# RVM/Rbenv #
+#############
+.ruby-version
+.ruby-gemset
