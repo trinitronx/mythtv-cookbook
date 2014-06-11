@@ -12,6 +12,12 @@ describe 'mythtv::airplay' do
     it 'creates a remote_file containing the RAOP Key for Airplay' do
       expect(subject).to create_remote_file('/home/ubuntu/.mythtv/RAOPKey.rsa').with(owner: 'ubuntu')
     end
+
+    it 'creates a profile.d script for setting MYTHTV_AIRPLAY=1' do
+      profile_d_mythtv_airplay = '/etc/profile.d/mythtv_airplay.sh'
+      expect(subject).to create_file(profile_d_mythtv_airplay).with(owner: 'root', group: 'root', mode: 0755)
+      expect(subject).to render_file(profile_d_mythtv_airplay).with_content(/^export MYTHTV_AIRPLAY=1$/)
+    end
   end
 
   context 'when raop_key user is NOT set' do
