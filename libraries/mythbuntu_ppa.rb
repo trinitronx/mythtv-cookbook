@@ -11,7 +11,7 @@ class LSB
       :raring   => '13.04',
       :saucy    => '13.10',
       :trusty   => '14.04'
-    }
+    } unless const_defined?(:CODENAMES)
 end
 
 class MythbuntuPPA
@@ -21,7 +21,7 @@ class MythbuntuPPA
     '0.25' => [ :lucid, :natty, :oneiric, :precise, :quantal ],
     '0.26' => [ :precise, :quantal, :raring ],
     '0.27' => [ :precise, :raring, :saucy, :trusty ]
-  }
+  } unless const_defined?(:VERSIONS)
 
   def self.supported_versions(lsb_codename)
     case lsb_codename.to_sym
